@@ -399,6 +399,24 @@
 </ARG>
 
 <ARG>
+<NAME>GstGLOverlay::ratio-video</NAME>
+<TYPE>gint</TYPE>
+<RANGE>[0,3]</RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>choose ratio video between 0 and 3
+ 			0 : Default ratio
+			1 : 4 / 3
+			2 : 16 / 9
+			3 : 16 / 10</NICK>
+<BLURB>choose ratio video between 0 and 3
+ 			0 : Default ratio
+			1 : 4 / 3
+			2 : 16 / 9
+			3 : 16 / 10.</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+
+<ARG>
 <NAME>GstGLUpload::external-opengl-context</NAME>
 <TYPE>gulong</TYPE>
 <RANGE></RANGE>
@@ -476,5 +494,35 @@
 <NICK>Znear</NICK>
 <BLURB>Specifies the distance from the viewer to the near clipping plane.</BLURB>
 <DEFAULT>0.1</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstGLFilterShader::location</NAME>
+<TYPE>gchar*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>File Location</NICK>
+<BLURB>Location of the GLSL file to load.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstGLFilterShader::preset</NAME>
+<TYPE>gchar*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Preset File Location</NICK>
+<BLURB>Location of the shader uniform variables preset file.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstGLFilterShader::vars</NAME>
+<TYPE>gchar*</TYPE>
+<RANGE></RANGE>
+<FLAGS>w</FLAGS>
+<NICK>Uniform variables</NICK>
+<BLURB>Set the shader uniform variables.</BLURB>
+<DEFAULT>NULL</DEFAULT>
 </ARG>
 

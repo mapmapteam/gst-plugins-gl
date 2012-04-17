@@ -3,10 +3,10 @@
   <description>OpenGL plugin</description>
   <filename>../../gst/gl/.libs/libgstopengl.so</filename>
   <basename>libgstopengl.so</basename>
-  <version>0.10.2</version>
+  <version>0.10.2.1</version>
   <license>LGPL</license>
   <source>gst-plugins-gl</source>
-  <package>GStreamer OpenGL Plug-ins source release</package>
+  <package>GStreamer OpenGL Plug-ins git</package>
   <origin>Unknown package origin</origin>
   <elements>
     <element>
@@ -283,27 +283,6 @@
       </pads>
     </element>
     <element>
-      <name>glshader</name>
-      <longname>Gstreamer OpenGL Dynamic shader parser</longname>
-      <class>Filter/Effect</class>
-      <description>Shader parser and loader</description>
-      <author>Luc Deschenaux &lt;luc.deschenaux@freesurf.ch&gt;</author>
-      <pads>
-        <caps>
-          <name>sink</name>
-          <direction>sink</direction>
-          <presence>always</presence>
-          <details>video/x-raw-gl, width=(int)[ 1, 8000 ], height=(int)[ 1, 6000 ], pixel-aspect-ratio=(fraction)1/1, framerate=(fraction)[ 0/1, 100/1 ]</details>
-        </caps>
-        <caps>
-          <name>src</name>
-          <direction>source</direction>
-          <presence>always</presence>
-          <details>video/x-raw-gl, width=(int)[ 1, 8000 ], height=(int)[ 1, 6000 ], pixel-aspect-ratio=(fraction)1/1, framerate=(fraction)[ 0/1, 100/1 ]</details>
-        </caps>
-      </pads>
-    </element>
-    <element>
       <name>glimagesink</name>
       <longname>OpenGL video sink</longname>
       <class>Sink/Video</class>
@@ -345,6 +324,27 @@
       <class>Filter/Effect</class>
       <description>Overlay GL video texture with a PNG image</description>
       <author>Filippo Argiolas &lt;filippo.argiolas@gmail.com&gt;</author>
+      <pads>
+        <caps>
+          <name>sink</name>
+          <direction>sink</direction>
+          <presence>always</presence>
+          <details>video/x-raw-gl, width=(int)[ 1, 8000 ], height=(int)[ 1, 6000 ], pixel-aspect-ratio=(fraction)1/1, framerate=(fraction)[ 0/1, 100/1 ]</details>
+        </caps>
+        <caps>
+          <name>src</name>
+          <direction>source</direction>
+          <presence>always</presence>
+          <details>video/x-raw-gl, width=(int)[ 1, 8000 ], height=(int)[ 1, 6000 ], pixel-aspect-ratio=(fraction)1/1, framerate=(fraction)[ 0/1, 100/1 ]</details>
+        </caps>
+      </pads>
+    </element>
+    <element>
+      <name>glshader</name>
+      <longname>OpenGL fragment shader filter</longname>
+      <class>Filter/Effect</class>
+      <description>Load GLSL fragment shader from file</description>
+      <author>&lt;luc.deschenaux@freesurf.ch&gt;</author>
       <pads>
         <caps>
           <name>sink</name>

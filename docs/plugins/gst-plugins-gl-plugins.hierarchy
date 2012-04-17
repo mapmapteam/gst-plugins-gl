@@ -23,6 +23,7 @@ GObject
           GstGLFilterGlass
           GstGLFilterLaplacian
           GstGLFilterReflectedScreen
+          GstGLFilterShader
           GstGLFilterSobel
           GstGLOverlay
         GstGLUpload
@@ -30,6 +31,12 @@ GObject
         GstPipeline
       GstGLMixer
         GstGLMosaic
+      GstVisualGL
+        GstVisualGLlv_flower
+        GstVisualGLlv_gltest
+        GstVisualGLmadspin
+        GstVisualGLnastyfft
+        GstVisualGLprojectM
     GstPad
       GstGLMixerPad
     GstPadTemplate
