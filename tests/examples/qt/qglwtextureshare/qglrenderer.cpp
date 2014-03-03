@@ -25,9 +25,30 @@
 #include "qglrenderer.h"
 #include "pipeline.h"
 
+
 #if defined(Q_WS_MAC)
 extern void *qt_current_nsopengl_context();
 #endif
+
+/**
+ * GluPerspective is part of the GLU library, and not supported as of newer (3.x?)
+ * versions of OpenGL. An easy way to update the example is to write your own
+ * replacement, something like this:
+ * 
+ * See http://stackoverflow.com/questions/9210118/qts-opengl-samples-complain-about-some-errors-and-wont-run
+ */
+void gluPerspective(double fovy,double aspect, double zNear, double zFar)
+{
+     // Start in projection mode.
+     glMatrixMode(GL_PROJECTION);
+     glLoadIdentity();
+     double xmin, xmax, ymin, ymax;
+     ymax = zNear * tan(fovy * M_PI / 360.0);
+     ymin = -ymax;
+     xmin = ymin * aspect;
+     xmax = ymax * aspect;
+     glFrustum(xmin, xmax, ymin, ymax, zNear, zFar);
+}
 
 QGLRenderer::QGLRenderer(const QString &videoLocation,
                          QWidget *parent)
