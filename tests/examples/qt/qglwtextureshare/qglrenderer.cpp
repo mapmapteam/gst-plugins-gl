@@ -77,15 +77,16 @@ QGLRenderer::initializeGL()
 #elif defined (Q_WS_MAC)
     ctx.contextId = (NSOpenGLContext*) qt_current_nsopengl_context();
 #elif defined(Q_WS_X11)
-    ctx.contextId = glXGetCurrentContext();
-    const char *display_name = getenv("DISPLAY");
-    if(display_name == NULL)
-    {
-        // actually we should look for --display command line parameter here
-        display_name = ":0.0";
-    }
-    ctx.display = XOpenDisplay(display_name);
-    ctx.wnd = this->winId();
+// XXX: aalex disabled this:
+//     ctx.contextId = glXGetCurrentContext();
+//     const char *display_name = getenv("DISPLAY");
+//     if(display_name == NULL)
+//     {
+//         // actually we should look for --display command line parameter here
+//         display_name = ":0.0";
+//     }
+//     ctx.display = XOpenDisplay(display_name);
+//     ctx.wnd = this->winId();
 #endif
 
     // We need to unset Qt context before initializing gst-gl plugin.
